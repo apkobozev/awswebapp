@@ -18,7 +18,7 @@ public class ProductController {
         products.put(id, new Product(id));
     }
 
-    @RequestMapping("product/{id}")
+    @RequestMapping(value = "product/{id}", method = RequestMethod.GET, produces = "application/json")
     public Product getProduct(@PathVariable("id") String id) {
         return products.get(id);
     }
